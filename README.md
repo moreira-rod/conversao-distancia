@@ -1,6 +1,6 @@
-# projeto conversao-distancia em docker
+# Projeto conversao-distancia em Container Docker
 
-## criação do dockerfile para criação da imagem customizada
+## Dockerfile para criação da imagem customizada
 
 FROM python
 WORKDIR /app
@@ -10,8 +10,8 @@ COPY . /app/
 EXPOSE 5000
 CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
 
-## criando a imagem docker
+## Criando a imagem docker
 docker build -t conversao-distancia -f Dockerfile .
 
-## criando o container docker
+## Criando o container docker
 docker container run -d -p 8181:5000 conversao-distancia
